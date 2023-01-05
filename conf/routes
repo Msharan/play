@@ -1,0 +1,17 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+
+# App
+GET       /ping                                                controllers.AppController.ping
+HEAD      /ping                                                controllers.AppController.ping
+
+GET       /users/:userid                                       controllers.UsersController.get(userid)
+POST      /users                                               controllers.UsersController.create
+POST      /authn                                               controllers.UsersController.authenticate()
+
+
+GET       /users/:userid/orders                                 controllers.OrdersController.get(userid)
+POST      /orders                                               controllers.OrdersController.create
+DELETE    /users/:userid/orders/:orderid                        controllers.OrdersController.cancel(userid, orderid)
+
